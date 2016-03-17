@@ -1,0 +1,3 @@
+name = Install Connector
+description = This is a helper module that allows you to pick a module for install.
+core = 7.x

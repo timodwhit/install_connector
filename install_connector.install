@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * File for description
+ */
+
+/**
+ * Implements hook_install().
+ */
+function install_connector_install() {
+  $module = variable_get('install_connector_module', '');
+
+  if (!empty($module)) {
+    module_enable(array($modules));
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function install_connector_uninstall() {
+  db_delete('variable')
+    ->condition('name', db_like('install_connector_') . '%', 'LIKE')
+    ->execute();
+  cache_clear_all('variables', 'cache');
+}
