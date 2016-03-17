@@ -11,7 +11,7 @@ function install_connector_install() {
   $module = variable_get('install_connector_module', '');
 
   if (!empty($module)) {
-    module_enable(array($modules));
+    module_enable(array($module));
   }
 }
 
